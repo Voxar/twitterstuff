@@ -26,7 +26,7 @@ class SpamController < ApplicationController
   end
   
   def filter
-    @followers = followers.reject{|f| f.following}
+    @followers = followers.reject{|f| f.following }
   end
   
   def authorize
@@ -64,7 +64,14 @@ class SpamController < ApplicationController
     users.each do |follower| 
       followers = follower.followers_count
       following = follower.friends_count
-      follower.rating = followers.to_f/following.to_f
+      if following > 0
+        follower.rating = followers.to_f/following.to_f
+      else
+        follower.rating = 0
+      end
+      
+      #users with less than 50 follows is probably not bots
+      follower.rating += 0.11 if following < 50
     end
     users.sort do |a,b|
       a.rating - b.rating
