@@ -1,0 +1,111 @@
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>Block the spammers!</title>
+    <%= javascript_include_tag :defaults %>
+    <style type="text/css" media="screen">
+      div{
+        display:block;
+      }
+      img{
+        display:inline; 
+        position:relative;
+        vertical-align:top;
+        border:none;
+        width: 50px;
+        height:50px;
+
+      }
+      #content ol{ 
+        list-style: none inside; 
+      }
+      li{
+        overflow:hidden;
+      }
+      .avatar{
+        position:absolute;
+        width:50px;
+        margin: 0;
+        margin-left:10px;
+        padding: 0;
+        overflow:hidden;
+      }
+      .entry{
+        height: 55px;
+        overflow: visible;
+        padding:0;
+        border-top: dashed;
+        border-width:1px;
+        border-color: rgb(0, 200, 200);
+        margin-top: 10px;
+        padding-top: 15px;
+      }
+      .message{
+        margin-left: 65px;
+        position:static;
+        display:block;
+      }
+      .wants{
+        color:rgb(150,150,150);
+        overflow: hidden;
+      }
+      #page{
+        width:1000px;
+      }
+      #content{
+        margin-left: auto;
+        margin-right: auto;
+        padding:0;
+        width:800px;
+      }
+      #about{
+        float:right;
+        width:300px;
+      }
+      #footer{
+        clear:both;
+        padding-top: 2em;
+      }
+      #header{
+        font-weight:bold;
+        font-size: 2em;
+        padding-bottom: 1em;
+      }
+      .good{
+        color: green;
+      }
+      .medium{
+        color: blue;
+      }
+      .bad{
+        color: red;
+        font-weight: bold;
+      }
+      .whale{
+        color:green;
+        font-weight:bold;
+      }
+      .rating{
+        font-size: 0.7em;
+      }
+    </style>
+  </head>
+  
+  <body>
+
+    <div id="page">
+      <div id="header">
+        Block the spammers!
+      </div>
+      <div id="flash">
+        
+      </div>
+      <div id="content">
+        <%= @content_for_layout %>
+      </div>
+    <div id="footer">
+      by <a href="http://twitter.com/voxar">@voxar</a> 
+    </div>
+    </div>
+  </body>
+</html>

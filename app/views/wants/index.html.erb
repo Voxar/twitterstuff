@@ -1,0 +1,11 @@
+
+<ol>
+<% @wants.each do |want| %>
+  <li class="want">
+    <div class="entry">
+      <span class="avatar"><a class="name" href="http://twitter.com/<%= want.user %>"><img src="<%= want.image_url %>" /></a></span>
+      <span class="message"><a class="name" href="http://twitter.com/<%= want.user %>"><%= want.user %></a> <span class="wants">wants</span> <%= auto_link want.text %></span>
+    </div>
+  </li>
+<% end %>
+</ol>

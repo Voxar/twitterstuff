@@ -1,0 +1,17 @@
+Twitterers that you don't follow but who follows you
+
+<ol>
+<% @followers.each do |follower| %>
+  <li class="want">
+    <div class="entry">
+      <span class="avatar"><a class="name" target="_blank" href="http://twitter.com/<%= follower.screen_name %>"><img src="<%= follower.profile_image_url %>" /></a></span>
+      <span class="message">
+        <a class="name" target="_blank" href="http://twitter.com/<%= follower.screen_name %>"><%= follower.screen_name %></a>
+        <i><%= follower.statuses_count %> posts, <%= follower.followers_count %> followers, following <%= follower.friends_count %></i><br>
+        Standing: <%= rating_text(follower) %><br>
+        <span id="suggestion_<%=follower.id%>"><%= rating_suggestion(follower) %></span>
+      </span>
+    </div>
+  </li>
+<% end %>
+</ol>

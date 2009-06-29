@@ -1,0 +1,73 @@
+<html>
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <title>Twitterers Wants!</title>
+    <style type="text/css" media="screen">
+      div{
+        display:block;
+      }
+      #content img{
+        display:inline; 
+        vertical-align:top;
+        
+      }
+      #content ol{ 
+        list-style: none inside; 
+      }
+      .avatar{
+        position:absolute;
+        width:50px;
+        margin: 0;
+        margin-left:10px;
+        padding: 0;
+      }
+      .entry{
+        height: 50px;
+        overflow: hidden;
+        padding:0;
+        border-top: dashed;
+        border-width:1px;
+        border-color: rgb(0, 200, 200);
+        margin-top: 10px;
+        padding-top: 10px;
+      }
+      .message{
+        margin-left: 65px;
+        position:static;
+        display:block;
+      }
+      .wants{
+        color:rgb(150,150,150);
+      }
+      #page{
+        width:1000px;
+      }
+      #content{
+        margin-left: auto;
+        margin-right: auto;
+        padding:0;
+        width:800px;
+      }
+      #about{
+        float:right;
+        width:300px;
+      }
+      #footer{
+        clear:both;
+      }
+    </style>
+  </head>
+  
+  <body>
+
+    <div id="page">
+      <div id="header">
+        hello word
+      </div>
+      <div id="content">
+        <%= @content_for_layout %>
+      </div>
+  
+    </div>
+  </body>
+</html>
